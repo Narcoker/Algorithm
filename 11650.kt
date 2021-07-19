@@ -1,5 +1,5 @@
 
-//클래스, 우선순위 큐, Scanner : 191948KB 2568ms
+//클래스, 우선순위 큐, Scanner
 //import java.util.*
 //class Node(var x:Int, var y:Int) : Comparable<Node> {
 //    override fun compareTo(other: Node): Int {
@@ -26,7 +26,7 @@
 //    }
 //}
 
-// Pair, List, Scanner : 196520KB 2504ms
+// Pair, List, Scanner
 //import java.util.*
 //fun main() = with(Scanner(System.`in`)) {
 //    val pairs = mutableListOf<Pair<Int,Int>>()
@@ -41,7 +41,7 @@
 //        println()
 //    }
 //}
-import java.util.* //Pair, BufferReader, BufferWriter : 81868KB 2044ms
+import java.util.* //
 
 fun main(){
     val br = System.`in`.bufferedReader()
