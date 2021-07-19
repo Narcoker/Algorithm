@@ -9,6 +9,6 @@ fun main(){
     }
     else if((n%4 == 0 && n % 100 != 0)){
         println(1)
-    }g
+    }
     else println(0)
 }
