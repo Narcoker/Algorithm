@@ -1,37 +1,46 @@
-import java.lang.StringBuilder
 import java.util.*
 
 fun main() {
     val s = Scanner(System.`in`)
-    var n = s.nextInt()
-    val result = StringBuilder("666")
-    var left = -1
-    var right = 0
+    var first = 0
+    var second = 666
+    var type = false
+    var max = 0
+    val n = s.nextInt()
 
     for (i in 1..n) {
-        if (n == 1) {
-            println(result)
-            return
-        }
-        if (left % 10 != 6 && right == 0) {
-            left++
-        } else {
-            right++
-            if (right == 10) {
-                right = 0
-                left++
+        if (i == 1)
+            continue
+
+        if (type == false) {
+            first++
+            if (first % 1000 == 666) {
+                second = 0
+                max = 1000
+                type = true
+            } else if (first % 100 == 66) {
+                second = 600
+                max = 700
+                type = true
+            } else if (first % 10 == 6) {
+                second = 660
+                max = 670
+                type = true
             }
-        }
-    }
+            continue
+        } else if (type == true) {
+            second++
 
-    if (right == 0) {
-        result.insert(0, left)
-        if (left % 10 == 6) result[result.length - 1] = '0'
-    } else {
-        result.deleteCharAt(0)
-        result.insert(0, left)
-        result.append(right)
+            if (second == max) {
+                first++
+                second = 666
+                type = false
+            }
+        } else first++
     }
+    if (n != 1)
+        println(String.format("%d%03d", first, second))
 
-    println(result)
+    else
+        println(second)
 }
