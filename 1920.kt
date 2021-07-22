@@ -17,9 +17,6 @@ fun main() = with(BufferedReader(InputStreamReader(System.`in`))) {
         find[i] = token.nextToken().toInt()
 
     for(i in find.indices) {
-        if (arr.contains(find[i]))
-            println("1")
-        else
-            println("0")
+
     }
 }
