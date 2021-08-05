@@ -44,7 +44,6 @@ fun main() {
         min_count = 0
         max_count = 0
     }
-
     bw.write("${arr[1]}\n${arr[2]}")
 
     br.close()
