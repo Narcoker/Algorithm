@@ -10,13 +10,13 @@ fun main() {
     var start = token.nextToken().toInt()
     var end = token.nextToken().toInt()
 
-    val result = bfs_11725(start, end)
+    val result = bfs_1697(start, end)
     bw.write("$result")
     br.close()
     bw.close()
 }
 
-fun bfs_11725(start: Int, end: Int): Int {
+fun bfs_1697(start: Int, end: Int): Int {
     val q: Queue<Int> = LinkedList<Int>()
     var stair_end = start
     var count = 0
