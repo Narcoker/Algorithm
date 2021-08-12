@@ -1,6 +1,6 @@
 import java.util.*
 
-var visited_11725 = Array(100001) { -1 }
+var visited_1697 = Array(100001) { -1 }
 
 fun main() {
     val br = System.`in`.bufferedReader()
@@ -21,30 +21,30 @@ fun bfs_11725(start: Int, end: Int): Int {
     var stair_end = start
     var count = 0
     q.add(start)
-    visited_11725[start] = 0
+    visited_1697[start] = 0
 
     var cur: Int
     while (true) {
         cur = q.poll()
 
         if (cur == end)
-            return visited_11725[cur]
+            return visited_1697[cur]
 
         var back = cur - 1
         var go = cur + 1
         var jump = cur * 2
 
-        if (back >= 0 && visited_11725[back] == -1) {
+        if (back >= 0 && visited_1697[back] == -1) {
             q.add(back)
-            visited_11725[back] = visited_11725[cur] + 1
+            visited_1697[back] = visited_1697[cur] + 1
         }
-        if (go <= 100000 && visited_11725[go] == -1) {
+        if (go <= 100000 && visited_1697[go] == -1) {
             q.add(go)
-            visited_11725[go] = visited_11725[cur] + 1
+            visited_1697[go] = visited_1697[cur] + 1
         }
-        if (jump <= 100000 && visited_11725[jump] == -1) {
+        if (jump <= 100000 && visited_1697[jump] == -1) {
             q.add(jump)
-            visited_11725[jump] = visited_11725[cur] + 1
+            visited_1697[jump] = visited_1697[cur] + 1
         }
     }
 }
