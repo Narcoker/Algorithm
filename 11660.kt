@@ -12,38 +12,33 @@ fun main() {
     val arr = Array(n + 1) { Array(n + 1) { 0 } }
 
     var input: Int
+
     for (i in 1..n) {
         token = StringTokenizer(br.readLine())
-        for (k in 0..n) {
-            if (i == 1 && k == 0) continue
-
+        for (k in 1..n) {
             input = token.nextToken().toInt()
-
-            if(i == 1 && k == 1) arr[i][k] = input
-
-            else if (i >= 1 && k == 0)
-                arr[i][k] = arr[i - 1][n]
-            else
-                arr[i][k] = input + arr[i][k - 1]
+            arr[i][k] = input + arr[i-1][k] + arr[i][k-1] - arr[i-1][k-1]
         }
     }
 
-    var start_x: Int
-    var start_y: Int
-    var end_x: Int
-    var end_y: Int
+    var y1: Int
+    var x1: Int
+    var y2: Int
+    var x2: Int
+    var result: Int
     repeat(m) {
         token = StringTokenizer(br.readLine(), " ")
-        start_x = Integer.parseInt(token.nextToken())
-        start_y = Integer.parseInt(token.nextToken())
-        end_x = Integer.parseInt(token.nextToken())
-        end_y = Integer.parseInt(token.nextToken())
+        x1 = Integer.parseInt(token.nextToken())
+        y1 = Integer.parseInt(token.nextToken())
+        x2 = Integer.parseInt(token.nextToken())
+        y2 = Integer.parseInt(token.nextToken())
 
-        if(start_x == 0 && start_y != 0){
-            start_y--
-            start_x = n
-        }
+        result= arr[x2][y2] - arr[x2][y1-1] - arr[x1-1][y2] + arr[x1-1][y1-1]
 
 
+        bw.write("$result\n")
     }
+
+    bw.close()
+    br.close()
 }
