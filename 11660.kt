@@ -16,13 +16,15 @@ fun main() {
         token = StringTokenizer(br.readLine())
         for (k in 0..n) {
             if (i == 1 && k == 0) continue
+            else if (i >= 2 && k == 0) {
+                arr[i][k] = arr[i - 1][n]
+                continue
+            }
 
             input = token.nextToken().toInt()
 
             if(i == 1 && k == 1) arr[i][k] = input
 
-            else if (i >= 1 && k == 0)
-                arr[i][k] = arr[i - 1][n]
             else
                 arr[i][k] = input + arr[i][k - 1]
         }
@@ -43,6 +45,8 @@ fun main() {
             start_y--
             start_x = n
         }
+
+
 
 
     }
