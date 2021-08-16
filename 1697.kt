@@ -18,8 +18,6 @@ fun main() {
 
 fun bfs_1697(start: Int, end: Int): Int {
     val q: Queue<Int> = LinkedList<Int>()
-    var stair_end = start
-    var count = 0
     q.add(start)
     visited_1697[start] = 0
 
