@@ -1,4 +1,9 @@
+package baekjoon_11660
+
+import java.io.BufferedReader
+import java.io.BufferedWriter
 import java.util.*
+
 
 fun main() {
     val br = System.`in`.bufferedReader()

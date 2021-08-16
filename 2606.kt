@@ -1,10 +1,12 @@
+package baekjoon_2606
+
 import java.util.*
 
-var n: Int = 0
-var m: Int = 0
-var table: Array<IntArray> = arrayOf()
-var visited: BooleanArray = booleanArrayOf()
-var count = 0
+internal var n: Int = 0
+internal var m: Int = 0
+internal var table: Array<IntArray> = arrayOf()
+internal var visited: BooleanArray = booleanArrayOf()
+internal var count = 0
 
 fun main() {
     val br = System.`in`.bufferedReader()

@@ -1,3 +1,5 @@
+package baekjoon_4963
+
 import java.util.*
 
 var table = Array(50) { Array(50) { 0 } }

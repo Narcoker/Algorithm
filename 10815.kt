@@ -1,11 +1,12 @@
+package baekjoon_10815
+
 import java.util.*
 
-var have: Array<Int> = arrayOf()
-val br = System.`in`.bufferedReader()
-val bw = System.`out`.bufferedWriter()
+internal var have: Array<Int> = arrayOf()
+internal val br = System.`in`.bufferedReader()
+internal val bw = System.`out`.bufferedWriter()
 
 fun main() {
-
 
     val n = br.readLine().toInt()
     have = Array(n) { 0 }

@@ -1,3 +1,5 @@
+package baekjoon_11724
+
 import java.util.*
 
 var table = Array(1001){Array(1001){false} }

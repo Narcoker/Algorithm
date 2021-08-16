@@ -1,3 +1,5 @@
+package baekjoon_1012
+
 import java.util.*
 
 val table = Array(50) { BooleanArray(50) { false } }
