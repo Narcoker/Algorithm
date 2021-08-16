@@ -1,19 +1,20 @@
+package baekjoon_1260
+
 import java.io.BufferedReader
 import java.io.InputStreamReader
-import java.lang.StringBuilder
 import java.util.*
 
-var n = 0
-var m = 0
-var start = 0
-var table: Array<IntArray> = arrayOf()
-var visited: BooleanArray = booleanArrayOf()
+internal var n = 0
+internal var m = 0
+internal var start = 0
+internal var table: Array<IntArray> = arrayOf()
+internal var visited: BooleanArray = booleanArrayOf()
 
 fun main() = with(BufferedReader(InputStreamReader(System.`in`))){
     var token  = readLine().split(" ")
     n = token[0].toInt()
-    m = token[1].toInt(); //
-    start = token[2].toInt();
+    m = token[1].toInt()
+    start = token[2].toInt()
 
     table = Array(n+1){IntArray(n+1) {0} }
     visited = BooleanArray(n+1){false}
@@ -27,24 +28,24 @@ fun main() = with(BufferedReader(InputStreamReader(System.`in`))){
         table[b][a] = 1
     }
 
-    dfs(start)
+    dfs_1260(start)
     for(i in 0 until n+1)
         visited[i] = false
     println()
-    bfs(start)
+    bfs_1260(start)
 }
 
-fun dfs(v :Int) {
+fun dfs_1260(v :Int) {
     visited[v] = true
     print("$v ")
     for(i in 1 .. n){
         if(!visited[i] && table[v][i] == 1){
-            dfs(i)
+            dfs_1260(i)
         }
     }
 }
 
-fun bfs(v: Int){
+fun bfs_1260(v: Int){
     val queue: Queue<Int> = LinkedList<Int>()
     queue.add(v)
     visited[v] = true
