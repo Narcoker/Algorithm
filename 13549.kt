@@ -1,6 +1,5 @@
 package baekjoon_13549
 
-import sun.awt.image.ImageWatched
 import java.util.*
 
 val br = System.`in`.bufferedReader()
