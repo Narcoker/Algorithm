@@ -16,7 +16,12 @@ fun main() {
     n = token.nextToken().toInt()
     m = token.nextToken().toInt()
 
-    bfs(n)
+    if(n == m){
+        bw.write("0")
+        bw.newLine()
+        bw.write("1")
+    }
+    else bfs(n)
 
     bw.close()
     br.close()
@@ -30,16 +35,10 @@ fun bfs(start: Int) {
 
     var cur = 0
     var count = 0
-    var end_stair = 100001
-    while (true) {
+    var minTime = 0
+    var arrive = false
+    while (q.isNotEmpty()) {
         cur = q.poll()
-
-        if(q.isNotEmpty() && isvisited[cur] == end_stair){
-            bw.write("${isvisited[m]}")
-            bw.newLine()
-            bw.write("$count")
-            return
-        }
 
         arr[0] = cur - 1
         arr[1] = cur + 1
@@ -47,22 +46,30 @@ fun bfs(start: Int) {
 
         for (i in arr.indices) {
             if (arr[i] in 0..100000) {
-                if (arr[i] == m || (isvisited[arr[i]] == isvisited[cur] + 1) || isvisited[arr[i]] == -1) {
+                if ((isvisited[arr[i]] == isvisited[cur] + 1) || isvisited[arr[i]] == -1) {
                     if (i != 2) {
                         q.add(arr[i])
                     } else {
                         if (arr[i] > 0)
                             q.add(arr[i])
                     }
+
                     isvisited[arr[i]] = isvisited[cur] + 1
 
-                    if(arr[i] == m) {
+                    if (arr[i] == m && !arrive) {
+                        minTime = isvisited[arr[i]]
+                        arrive = true
                         count++
-                        end_stair = isvisited[cur] + 1
+                    } else if (arr[i] == m && arrive) {
+                        if (isvisited[arr[i]] == minTime)
+                            count++
                     }
+
                 }
             }
         }
     }
-
+    bw.write("${isvisited[m]}")
+    bw.newLine()
+    bw.write("$count")
 }
