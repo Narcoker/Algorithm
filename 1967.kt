@@ -29,7 +29,6 @@ fun main() {
         table!![y].add(Pair(x, weight))
     }
 
-    var sum: Int
     dfs(1, 0)
 
     isvisited!!.fill(false)
