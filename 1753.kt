@@ -22,21 +22,20 @@ fun main() {
     n = token.nextToken().toInt()
     m = token.nextToken().toInt()
 
-    val start_v = br.readLine().toInt() - 1
+    val start_v = br.readLine().toInt()
 
     table = ArrayList()
-    for(i in 1 .. n) table!!.add(ArrayList())
+    for(i in 0 .. n) table!!.add(ArrayList())
 
-    cost = Array(n) { INF }
-
+    cost = Array(n+1) { INF }
 
     var start = 0
     var end = 0
     var weight = 0
     for (i in 1..m) {
         token = StringTokenizer(br.readLine())
-        start = token.nextToken().toInt() -1
-        end = token.nextToken().toInt() -1
+        start = token.nextToken().toInt()
+        end = token.nextToken().toInt()
         weight = token.nextToken().toInt()
 
         table!![start].add(Pair(end, weight))
@@ -44,14 +43,13 @@ fun main() {
 
     dikjstra(start_v)
 
-    cost!!.forEach{
-        if(it == INF) bw.write("INF\n")
-        else bw.write("$it\n")
+    for(i in 1 .. n){
+        if(cost!![i] == INF) bw.write("INF\n")
+        else bw.write("${cost!![i]}\n")
     }
 
     bw.close()
     br.close()
-
 }
 
 
